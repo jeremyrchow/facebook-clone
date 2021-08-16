@@ -7,11 +7,14 @@ import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
 import PeopleIcon from '@material-ui/icons/People';
 import PersonIcon from '@material-ui/icons/Person';
 import AddIcon from"@material-ui/icons/Add";
-import { IconButton } from '@material-ui/core';
+import { Avatar, IconButton } from '@material-ui/core';
 import NotificationsNoneTwoToneIcon from '@material-ui/icons/NotificationsNoneTwoTone';
 import CommentTwoToneIcon from '@material-ui/icons/CommentTwoTone';
 import ExpandMoreTwoToneIcon from '@material-ui/icons/ExpandMoreTwoTone';
+import { useStateValue } from "./StateProvider";
 function Header() {
+  const [{ user} ,dispatch] = useStateValue();
+
 return (
   <div className="header">
     <div className="header__left">
@@ -35,8 +38,9 @@ return (
     </div>
     <div className="header__right">
       <div className="header__info">
-        <PersonIcon />
-        <h4> Jeremy Chow </h4>
+        <Avatar src={user.photoURL} />
+        // <PersonIcon />
+        <h4> {user.displayName} </h4>
       </div>
       <IconButton>
         <AddIcon/>

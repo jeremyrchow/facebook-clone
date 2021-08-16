@@ -1,27 +1,35 @@
-import React from 'react';
+import React, { useState, useEffect }from 'react';
 import "./Feed.css";
 import StoryReel from './StoryReel';
 import Poster from './Poster';
 import Post from './Post';
+import db from './firebase';
+
 function Feed() {
+  const [posts, setPosts] = useState ( [] );
+
+  useEffect( ()=> {
+    db.collection('posts')
+    .orderBy('timestamp','desc')
+    .onSnapshot((snapshot) =>
+      setPosts(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() })))
+    );
+  }, []);
+
   return (
     <div className="feed">
       <StoryReel />
       <Poster />
-      <Post
-        profilePic = "https://media-exp1.licdn.com/dms/image/C5603AQFAKN4ErXYy1w/profile-displayphoto-shrink_200_200/0/1554765001760?e=1634774400&v=beta&t=ZI3wZE0CAV0IrQCiYhelSZd8oHFKiLqqG8u6O4eas0U"
-        message="Hello from californiaHello from californiaHello from californiaHello from california"
-        timestamp="12:09 AM"
-        username="jchowster"
-        image="https://content.fortune.com/wp-content/uploads/2019/10/GettyImages-1158402857.jpg?resize=750,500" 
-         />
-      <Post
-        profilePic = "https://media-exp1.licdn.com/dms/image/C5603AQFAKN4ErXYy1w/profile-displayphoto-shrink_200_200/0/1554765001760?e=1634774400&v=beta&t=ZI3wZE0CAV0IrQCiYhelSZd8oHFKiLqqG8u6O4eas0U"
-        message= "Hello from not california"
-        timestamp="12:09 AM"
-        username="jchowster"
-         />
-      <Post />
+      {posts.map(post => (
+        <Post
+          key={post.id}
+          profilePic={post.data.profilePic}
+          message={post.data.message}
+          timestamp={post.data.timestamp}
+          username={post.data.username}
+          image={post.data.image}
+        />
+      ))}
     </div>
   )
 }
