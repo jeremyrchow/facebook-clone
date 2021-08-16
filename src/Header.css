@@ -42,7 +42,7 @@
   color:grey;
 }
 .header__option:hover > .MuiSvgIcon-root{
-  color: #4211ca;;
+  color: #4211ca;
 }
 .header__option{
   display: flex;
