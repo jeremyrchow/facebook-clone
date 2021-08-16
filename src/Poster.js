@@ -43,11 +43,11 @@ function Poster() {
         </div>
         <div className="poster__option">
           <PhotoLibraryicon style= {{color: "blue"}}/>
-          <h3> Live Video </h3>
+          <h3>Photo/Video</h3>
         </div>
         <div className="poster__option">
           <InsertEmoticonIcon style= {{color: "orange"}}/>
-          <h3> Live Video </h3>
+          <h3>Feeling/Activity</h3>
         </div>
         
       </div>

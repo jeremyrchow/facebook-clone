@@ -24,13 +24,13 @@ return (
 
     <div className="header__center">
       <div className="header__option header__option--active">
-        <HomeIcon fontsize="large" />
+        <HomeIcon fontSize="large" />
       </div>
       <div className="header__option">
-        <VideoLibraryIcon fontsize="large" />
+        <VideoLibraryIcon fontSize="large" />
       </div>
       <div className="header__option">
-        <PeopleIcon fontsize="large" />
+        <PeopleIcon fontSize="large" />
       </div>
     </div>
     <div className="header__right">
