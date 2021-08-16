@@ -15,20 +15,25 @@
 }
 
 .poster__top > form{
-  flex: 1;
+  
   display: flex;
+  flex: 1;
 }
 
 .poster__top > form > input {
-  outline-width: 0px;
+  outline-width: 0;
   border: none;
   padding: 5px 20px;
   margin: 0 10px;
-  border-radius: 100px;
+  border-radius: 1000px;
   background-color: #eff2f5;
 }
 .poster__top > form > button {
   display: none;
+}
+
+.poster__input{
+  flex: 1;
 }
 @media (max-width: 1200px){
   .poster__top > form > button {

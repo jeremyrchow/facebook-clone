@@ -39,7 +39,6 @@ return (
     <div className="header__right">
       <div className="header__info">
         <Avatar src={user.photoURL} />
-        // <PersonIcon />
         <h4> {user.displayName} </h4>
       </div>
       <IconButton>
