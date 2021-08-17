@@ -35,12 +35,12 @@ function Poster() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             type="text"
-            placeholder={`What's on your mind, ${user.displayName.split()[0]}?`} 
+            placeholder={`What's on your mind, ${user.displayName.split(' ')[0]}?`} 
           />
           <input
             value={imageUrl}
             onChange ={(e) => setImageUrl(e.target.value)}
-            placeholder="image URL (optional)"/>
+            placeholder="Image URL (optional)"/>
 
           <button onClick={handleSubmit} type="submit">
             Hidden submit text
