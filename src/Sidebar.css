@@ -1,4 +1,8 @@
 .sidebar{
+  position: fixed;
   padding: 25px 10px;
-  flex: .33;
+  width: 15%;
+  flex: 15%;
+  z-index: 100;
+  box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 0.75);
 }

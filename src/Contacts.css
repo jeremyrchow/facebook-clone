@@ -1,0 +1,20 @@
+.contacts{
+  position: fixed;
+  padding: 25px 10px;
+  width: 20%;
+  right: 0;
+  z-index: 150;
+  box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 0.75);
+  height: 75%;
+  /* margin-top: 50px; */
+}
+.contacts__icons{
+  padding: 0px 1px;
+  /* justify-content: space-evenly; */
+}
+.contacts__header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+}
